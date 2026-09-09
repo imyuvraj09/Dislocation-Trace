@@ -1,0 +1,14 @@
+# Render.com Blueprint – deploys the FastAPI backend as a Web Service.
+# See https://render.com/docs/blueprint-spec for reference.
+
+services:
+  - type: web
+    name: dislocation-trace-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+    plan: free

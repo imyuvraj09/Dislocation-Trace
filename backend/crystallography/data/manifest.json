@@ -1,0 +1,10 @@
+{
+  "FCC_Face_Centered_Cubic": "(FCC) Face-Centered Cubic",
+  "BCC_Body_Centered_Cubic": "(BCC) Body-Centered Cubic",
+  "B2_Ordered_BCC": "(B2) Ordered BCC",
+  "Simple_Cubic_SC": "(SC) Simple Cubic",
+  "Simple_Tetragonal_P": "(ST) Simple Tetragonal",
+  "Body_Centered_Tetragonal_I": "(BCT) Body-Centered Tetragonal",
+  "FCT_Face_Centered_Tetragonal": "(FCT) Face-Centered Tetragonal",
+  "HCP_Hexagonal_Close_Packed": "(HCP) Hexagonal Close-Packed"
+}
