@@ -3,7 +3,7 @@
 
 services:
   - type: web
-    name: dislocation-trace-api
+    name: iisc-research-internshipp
     runtime: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
