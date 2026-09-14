@@ -448,26 +448,30 @@ function serializePairGbRecord(p) {
 export async function fetchMaterials() {
   try {
     const res = await apiFetch("/api/materials", { method: "GET" });
-    return res.materials; // [{ id, name }]
+    return (res.materials || []).filter(
+      (m) => m.id !== "Simple_Cubic_SC" && m.id !== "Simple_Tetragonal_P"
+    );
   } catch {
     try {
       const localRes = await fetch("/data/manifest.json");
       if (localRes.ok) {
         const manifest = await localRes.json();
-        return Object.entries(manifest).map(([id, name]) => {
-          const crystalSystem = id === "HCP_Hexagonal_Close_Packed"
-            ? "hcp"
-            : id.toLowerCase().includes("tetragonal")
-              ? "tetragonal"
-              : "cubic";
-          return {
-            id,
-            name,
-            crystalSystem,
-            indexNotation: crystalSystem === "hcp" ? "hkil" : "hkl",
-            requiresCOverA: crystalSystem !== "cubic",
-          };
-        });
+        return Object.entries(manifest)
+          .filter(([id]) => id !== "Simple_Cubic_SC" && id !== "Simple_Tetragonal_P")
+          .map(([id, name]) => {
+            const crystalSystem = id === "HCP_Hexagonal_Close_Packed"
+              ? "hcp"
+              : id.toLowerCase().includes("tetragonal")
+                ? "tetragonal"
+                : "cubic";
+            return {
+              id,
+              name,
+              crystalSystem,
+              indexNotation: crystalSystem === "hcp" ? "hkil" : "hkl",
+              requiresCOverA: crystalSystem !== "cubic",
+            };
+          });
       }
     } catch {
       /* fallback unavailable */

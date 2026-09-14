@@ -105,7 +105,9 @@ export default function GbExplorerPanel({ initialMaterialId }) {
   useEffect(() => {
     fetchMaterials()
       .then((res) => {
-        if (Array.isArray(res) && res.length > 0) setMaterials(res);
+        if (Array.isArray(res) && res.length > 0) {
+          setMaterials(res.filter((m) => m.id !== "Simple_Cubic_SC" && m.id !== "Simple_Tetragonal_P"));
+        }
       })
       .catch(() => {
         // Fall back to built-in list if API request fails
