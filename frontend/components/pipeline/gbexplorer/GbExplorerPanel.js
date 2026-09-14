@@ -52,8 +52,6 @@ const FALLBACK_MATERIALS = [
   { id: "FCC_Face_Centered_Cubic", name: "(FCC) Face-Centered Cubic", crystalSystem: "cubic", requiresCOverA: false },
   { id: "BCC_Body_Centered_Cubic", name: "(BCC) Body-Centered Cubic", crystalSystem: "cubic", requiresCOverA: false },
   { id: "B2_Ordered_BCC", name: "(B2) Ordered BCC", crystalSystem: "cubic", requiresCOverA: false },
-  { id: "Simple_Cubic_SC", name: "(SC) Simple Cubic", crystalSystem: "cubic", requiresCOverA: false },
-  { id: "Simple_Tetragonal_P", name: "(ST) Simple Tetragonal", crystalSystem: "tetragonal", requiresCOverA: true },
   { id: "Body_Centered_Tetragonal_I", name: "(BCT) Body-Centered Tetragonal", crystalSystem: "tetragonal", requiresCOverA: true },
   { id: "FCT_Face_Centered_Tetragonal", name: "(FCT) Face-Centered Tetragonal", crystalSystem: "tetragonal", requiresCOverA: true },
   { id: "HCP_Hexagonal_Close_Packed", name: "(HCP) Hexagonal Close-Packed", crystalSystem: "hcp", requiresCOverA: true },
