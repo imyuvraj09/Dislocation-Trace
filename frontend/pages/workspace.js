@@ -17,18 +17,23 @@ export default function WorkspacePage() {
               Reusable image infrastructure
             </p>
             <h1 className="mt-2 text-3xl font-semibold text-ink">Image Workspace</h1>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">
-              Browse, pan, zoom, adjust brightness/contrast, and inspect any
-              image registered by the pipeline. On a TEM image, use Draw Line
-              to add or correct a dislocation line by hand; on a diffraction
-              image, use Mark G-vector the same way for a spot. Either becomes
-              a first-class annotation with its own label, available in Stage
-              3 (line pairing) or Stage 2 (Miller indexing) alongside the
-              automatically detected ones. Select any line or g-vector
-              (Pointer tool) to hide or delete it -- deletion is non-
-              destructive and can be undone from the &quot;Deleted&quot; list
-              in the Inspector Panel.
-            </p>
+            <ol className="mt-3 max-w-2xl space-y-2 text-[15px] leading-relaxed text-muted">
+              <li>
+                1. Select the first TEM image and use Draw Line to precisely mark the projected traces of the dislocation segments you wish to analyse.
+              </li>
+              <li>
+                2. Select the second TEM image and mark the same physical segments using Draw Line.
+              </li>
+              <li>
+                3. Open each corresponding diffraction image and use Mark G-vector to mark at least three independently indexed diffraction vectors. Draw each vector from the central transmitted spot to its indexed diffraction spot.
+              </li>
+              <li>
+                4. To hide or delete an unwanted annotation, select the line or g-vector using Pointer, then choose Hide or Delete in the Inspect Panel.
+              </li>
+              <li>
+                5. After annotating both TEM images and both diffraction patterns, click Continue to Pipeline.
+              </li>
+            </ol>
           </div>
           <div className="shrink-0 pt-2">
             <Link href="/pipeline">
