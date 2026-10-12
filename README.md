@@ -483,7 +483,7 @@ See [GitHub's contributor history](https://github.com/imyuvraj09/Dislocation-Tra
 
 The application provides the following suggested software citation:
 
-> *DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis* [Software]. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc). https://github.com/imyuvraj09/Dislocation-Trace
+> *DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis*. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc). https://github.com/imyuvraj09/Dislocation-Trace
 
 For reproducibility, also record the commit SHA or release used in your analysis:
 

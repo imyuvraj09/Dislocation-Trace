@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CITATION_TEXT = `DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis [Software]. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc). https://github.com/imyuvraj09/IISc-Research-Internshipp`;
+const CITATION_TEXT = `DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc). https://github.com/imyuvraj09/IISc-Research-Internshipp`;
 
 /**
  * CitationContactCard
@@ -44,7 +44,7 @@ export default function CitationContactCard() {
 
         {/* Citation box */}
         <pre className="mt-4 overflow-x-auto whitespace-pre-wrap break-words rounded-md border border-line bg-surfaceAlt p-3 font-mono text-xs leading-relaxed text-ink">
-          DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis [Software]. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc).{" "}
+          DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc).{" "}
           <a
             href="https://github.com/imyuvraj09/IISc-Research-Internshipp"
             target="_blank"
