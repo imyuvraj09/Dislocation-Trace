@@ -469,9 +469,6 @@ export default function Stage9BatchOutput({ onComplete }) {
           </Alert>
         )}
 
-        <Alert variant="info">
-          The integer-indexed slip plane is the existing crystallographic approximation of the continuously calculated Cartesian slip-plane normal. The closest low-index slip plane is identified independently by comparing the continuous normal with Burgers-vector-compatible low-index plane variants using the appropriate crystal metric. The reported low-index deviation is the acute Cartesian angle between the continuous normal and the selected low-index plane normal. This geometrical comparison does not by itself prove that the plane was physically active.
-        </Alert>
 
         <Alert variant="error" message={batchError} onRetry={handleGenerate} />
 
