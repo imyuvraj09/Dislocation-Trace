@@ -41,7 +41,7 @@ export default function About() {
       college: "MCKV Institute of Engineering, West Bengal",
       instituteWebsite: "https://mckvie.edu.in",
       linkedin: "https://www.linkedin.com/in/imyuvraj-singh/",
-      email: "yuvraj@mckvie.edu.in",
+      email: "yuvrajsinghias09122004@gmail.com",
       photo: "/images/yuvraj.jpg",
       details:
         "Focused on automation of TEM dislocation trace analysis, combining computer vision (Python, OpenCV) with crystallographic geometry.",
