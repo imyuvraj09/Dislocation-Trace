@@ -33,10 +33,10 @@ export const STAGES = [
   {
     id: 3,
     slug: "line-pairing",
-    title: "Line Pairing",
+    title: "Dislocation-segment pairing",
     kind: "table",
     summary:
-      "Manually pair a detected dislocation line label from one TEM image with a label from another. Labels only identify lines within their own image -- the software never infers correspondence.",
+      "Match the same physical dislocation segment in the two TEM images using its marked label, such as M1 or M2. Labels identify the traces you drew in each image; the same segment may be labelled M1 in the first image and M2 in the second. Pair segments by their physical correspondence, not by matching label numbers.",
   },
   {
     id: 4,
