@@ -51,7 +51,7 @@ export default function ImageToolbar({ imageId }) {
   const DIVIDER_BEFORE = new Set(["zoom", "rotation", "brightness"]);
 
   return (
-    <div className="flex flex-wrap items-center gap-4 border-b border-line bg-surface px-4 py-2.5">
+    <div className="flex flex-wrap items-center gap-2 sm:gap-3 border-b border-line bg-surface px-3 sm:px-4 py-2 sm:py-2.5">
       {tools.map((tool) => (
         <ToolEntry
           key={tool.id}
@@ -87,7 +87,7 @@ function ToolEntry({
   onZoomIn,
   onZoomOut,
 }) {
-  const dividerEl = divider ? <div className="mx-1 h-4 w-px bg-line" /> : null;
+  const dividerEl = divider ? <div className="mx-0.5 sm:mx-1 h-4 w-px bg-line" /> : null;
 
   if (tool.kind === TOOL_KIND.WIDGET && tool.id === "zoom") {
     return (
@@ -125,7 +125,7 @@ function ToolEntry({
           onClick={onSelect}
           disabled={disabled}
           aria-pressed={isActive}
-          className={`flex items-center gap-1.5 rounded px-2 py-1 text-xs font-medium disabled:opacity-40 ${
+          className={`flex items-center gap-1.5 rounded px-2.5 py-1.5 text-xs font-medium min-h-[36px] sm:min-h-[32px] disabled:opacity-40 ${
             isActive ? "bg-beam-50 text-beam-700" : "text-muted hover:bg-surfaceAlt"
           }`}
         >
@@ -143,7 +143,7 @@ function ToolEntry({
         type="button"
         onClick={onAction}
         disabled={disabled}
-        className="flex items-center gap-1.5 rounded px-2 py-1 text-xs font-medium text-muted hover:bg-surfaceAlt disabled:opacity-40"
+        className="flex items-center gap-1.5 rounded px-2.5 py-1.5 text-xs font-medium text-muted hover:bg-surfaceAlt disabled:opacity-40 min-h-[36px] sm:min-h-[32px]"
       >
         <span aria-hidden>{tool.icon}</span> {tool.label}
       </button>

@@ -53,8 +53,8 @@ export default function About() {
       <Head>
         <title>Dislocation Trace</title>
       </Head>
-      <div className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-ink">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
+        <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-ink">
           Dislocation <span className="text-beam-500">Trace</span>
         </h1>
         <p className="mt-4 text-[15px] leading-relaxed text-muted">
@@ -99,7 +99,7 @@ export default function About() {
           href="https://docs.google.com/document/d/1zASoiXdGDQl2td728cl5bUZZwhbeCcWi/edit?usp=drive_link&ouid=101147543832362114658&rtpof=true&sd=true"
           target="_blank"
           rel="noreferrer"
-          className="text-sm font-medium text-muted hover:text-ink"
+          className="mt-2 inline-flex items-center min-h-[44px] text-sm font-medium text-muted hover:text-ink rounded-md hover:bg-surfaceAlt px-2.5 py-1.5 transition-colors border border-line"
         >
           📄 User Manual
         </a>

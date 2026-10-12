@@ -43,29 +43,29 @@ export default function MemberCard({ member }) {
 
   return (
     <div
-      className="rounded-lg border border-line bg-surface p-4 shadow-sm cursor-pointer hover:shadow-md transition-all duration-300 ease-in-out"
+      className="rounded-lg border border-line bg-surface p-4 shadow-sm cursor-pointer hover:shadow-md transition-all duration-300 ease-in-out min-w-0 break-words"
       onClick={() => setExpanded(!expanded)}
     >
       {hasPhoto ? (
         <img
           src={member.photo}
           alt={member.name}
-          className="w-24 h-24 rounded-full mx-auto mb-3 object-cover"
+          className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 object-cover"
           onError={() => setImageFailed(true)}
         />
       ) : (
         <div
-          className={`w-24 h-24 rounded-full mx-auto mb-3 flex items-center justify-center text-lg font-semibold text-white ${accentClass}`}
+          className={`w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-3 flex items-center justify-center text-lg font-semibold text-white ${accentClass}`}
           role="img"
           aria-label={member.name}
         >
           {getInitials(member.name)}
         </div>
       )}
-      <h3 className="text-lg font-medium text-ink text-center">{member.name}</h3>
-      <p className="text-sm text-muted text-center">{member.position}</p>
+      <h3 className="text-base sm:text-lg font-medium text-ink text-center break-words">{member.name}</h3>
+      <p className="text-sm text-muted text-center break-words">{member.position}</p>
       
-      <p className="text-sm text-muted text-center">
+      <p className="text-sm text-muted text-center break-words">
         {member.instituteWebsite ? (
           <a
             href={member.instituteWebsite}
@@ -81,7 +81,7 @@ export default function MemberCard({ member }) {
         )}
       </p>
 
-      <div className="mt-1.5 flex items-center justify-center gap-1.5 text-[13px]">
+      <div className="mt-1.5 flex flex-wrap items-center justify-center gap-1.5 text-[13px]">
         {member.linkedin && (
           <a
             href={member.linkedin}
@@ -100,7 +100,7 @@ export default function MemberCard({ member }) {
           <a
             href={`mailto:${member.email}`}
             onClick={(e) => e.stopPropagation()}
-            className="text-beam-500 hover:underline transition-colors duration-250 cursor-pointer font-medium"
+            className="text-beam-500 hover:underline transition-colors duration-250 cursor-pointer font-medium break-all"
           >
             Email
           </a>
@@ -108,7 +108,7 @@ export default function MemberCard({ member }) {
       </div>
 
       {expanded && (
-        <div className="mt-3 text-[14px] leading-relaxed text-muted">
+        <div className="mt-3 text-[14px] leading-relaxed text-muted break-words">
           <p>{member.details}</p>
         </div>
       )}

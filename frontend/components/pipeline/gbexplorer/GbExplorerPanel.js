@@ -518,8 +518,8 @@ export default function GbExplorerPanel({ initialMaterialId }) {
               >
                 Export CSV
               </Button>
-              <div className="overflow-hidden rounded-md border border-line">
-                <table className="w-full border-collapse text-sm">
+              <div className="overflow-x-auto scroll-thin rounded-md border border-line">
+                <table className="w-full border-collapse text-sm min-w-[280px]">
                   <thead>
                     <tr className="bg-surfaceAlt text-left text-xs uppercase tracking-wide text-subtle">
                       <th className="px-3 py-2 font-medium">g \ b</th>
@@ -650,8 +650,8 @@ export default function GbExplorerPanel({ initialMaterialId }) {
                       Export CSV
                     </Button>
                   </div>
-                  <div className="overflow-hidden rounded-md border border-line">
-                    <table className="w-full border-collapse text-sm">
+                  <div className="overflow-x-auto scroll-thin rounded-md border border-line">
+                    <table className="w-full border-collapse text-sm min-w-[320px]">
                       <thead>
                         <tr className="bg-surfaceAlt text-left text-xs uppercase tracking-wide text-subtle">
                           <th className="px-3 py-2 w-12 text-center font-medium">Select</th>

@@ -35,41 +35,43 @@ const DiffractionImageCard = memo(function DiffractionImageCard({
         height={img?.height}
         gvecs={overlayGVectors}
       />
-      <table className="w-full border-collapse text-sm">
-        <thead>
-          <tr className="border-t border-line text-left text-xs uppercase tracking-wide text-subtle">
-            <th className="px-4 py-2 font-medium">Spot</th>
-            <th className="px-4 py-2 font-medium">Miller index ({millerAxes.join(" ")})</th>
-          </tr>
-        </thead>
-        <tbody>
-          {gvecs.map((g) => {
-            const stored = millerIndices?.[g.g_id];
-            const value = stored?.length === millerAxes.length ? stored : millerAxes.map(() => "");
-            return (
-              <tr key={g.g_id} className="border-t border-line">
-                <td className="px-4 py-2 font-mono text-[13px]">{g.g_id}</td>
-                <td className="px-4 py-2">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-subtle">(</span>
-                    {millerAxes.map((axis, i) => (
-                      <input
-                        key={axis}
-                        type="number"
-                        value={value[i]}
-                        onChange={(e) => setMillerField(image, g.g_id, axis, e.target.value)}
-                        aria-label={`${g.g_id} ${axis}`}
-                        className="w-14 rounded border border-line bg-surface px-1.5 py-1 text-center font-mono text-sm text-ink focus:border-beam-500 focus:outline-none"
-                      />
-                    ))}
-                    <span className="text-subtle">)</span>
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className="overflow-x-auto scroll-thin">
+        <table className="w-full border-collapse text-sm min-w-[280px]">
+          <thead>
+            <tr className="border-t border-line text-left text-xs uppercase tracking-wide text-subtle">
+              <th className="px-4 py-2 font-medium">Spot</th>
+              <th className="px-4 py-2 font-medium">Miller index ({millerAxes.join(" ")})</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gvecs.map((g) => {
+              const stored = millerIndices?.[g.g_id];
+              const value = stored?.length === millerAxes.length ? stored : millerAxes.map(() => "");
+              return (
+                <tr key={g.g_id} className="border-t border-line">
+                  <td className="px-4 py-2 font-mono text-[13px]">{g.g_id}</td>
+                  <td className="px-4 py-2">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-subtle">(</span>
+                      {millerAxes.map((axis, i) => (
+                        <input
+                          key={axis}
+                          type="number"
+                          value={value[i]}
+                          onChange={(e) => setMillerField(image, g.g_id, axis, e.target.value)}
+                          aria-label={`${g.g_id} ${axis}`}
+                          className="w-14 rounded border border-line bg-surface px-1.5 py-1 text-center font-mono text-sm text-ink focus:border-beam-500 focus:outline-none"
+                        />
+                      ))}
+                      <span className="text-subtle">)</span>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 });
@@ -212,10 +214,10 @@ export default function Stage2MillerIndex({ onComplete }) {
             return (
               <div
                 key={image}
-                className="flex flex-wrap items-center gap-4 rounded-lg border border-line px-4 py-3"
+                className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 rounded-lg border border-line px-4 py-3"
               >
-                <span className="min-w-[10rem] font-mono text-sm text-ink">{image}</span>
-                <div className="flex items-center gap-1.5 rounded-md border border-line bg-surface px-2 py-1.5">
+                <span className="font-mono text-sm text-ink truncate sm:min-w-[10rem]">{image}</span>
+                <div className="flex items-center gap-1.5 rounded-md border border-line bg-surface px-2 py-1.5 self-start sm:self-auto">
                   <span className="pl-1 text-subtle">[</span>
                   {zoneAxisKeys.map((axis, index) => (
                     <input
@@ -230,12 +232,12 @@ export default function Stage2MillerIndex({ onComplete }) {
                   ))}
                   <span className="pr-1 text-subtle">]</span>
                 </div>
-                <label className="flex items-center gap-2 text-sm text-muted">
+                <label className="flex flex-wrap items-center gap-2 text-sm text-muted">
                   Indexed against
                   <select
                     value={z.diffImage ?? ""}
                     onChange={(e) => setZoneAxisField(image, "diffImage", e.target.value || null)}
-                    className="min-w-0 max-w-xs truncate rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none"
+                    className="min-w-0 max-w-full sm:max-w-xs truncate rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none min-h-[40px] sm:min-h-0"
                   >
                     <option value="">Select diffraction image…</option>
                     {diffImages.map((d) => (

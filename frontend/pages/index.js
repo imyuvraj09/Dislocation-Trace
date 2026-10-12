@@ -11,15 +11,15 @@ export default function Home() {
 
       {/* Hero */}
       <section className="border-b border-line bg-surface">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 sm:gap-10 px-4 sm:px-6 py-12 sm:py-16 lg:py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-beam-600">
               Open-source · crystallographic image analysis
             </p>
-            <h1 className="mt-3 max-w-xl font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
+            <h1 className="mt-3 max-w-xl font-display text-3xl font-semibold leading-tight text-ink sm:text-4xl lg:text-5xl">
               From raw TEM micrographs to indexed dislocation lines.
             </h1>
-            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-muted">
+            <p className="mt-4 sm:mt-5 max-w-lg text-[15px] leading-relaxed text-muted">
               DislocationTrace combines TEM images and indexed diffraction
               information from two specimen orientations to reconstruct
               three-dimensional dislocation-line directions. Its guided
@@ -28,10 +28,10 @@ export default function Home() {
               determination, with exportable results for multiple dislocation
               segments.
             </p>
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 href="/pipeline"
-                className="rounded-md bg-beam-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-beam-600"
+                className="inline-flex items-center justify-center rounded-md bg-beam-500 px-5 py-2.5 text-sm font-medium text-white hover:bg-beam-600 min-h-[44px]"
               >
                 Open the pipeline
               </Link>
@@ -40,7 +40,7 @@ export default function Home() {
                 href="https://docs.google.com/document/d/1zASoiXdGDQl2td728cl5bUZZwhbeCcWi/edit?usp=drive_link&ouid=101147543832362114658&rtpof=true&sd=true"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-line px-4 py-2 text-sm font-medium text-ink hover:bg-surface"
+                className="inline-flex items-center justify-center rounded-md border border-line px-4 py-2 text-sm font-medium text-ink hover:bg-surface min-h-[44px]"
               >
                 User Manual
               </a>
@@ -49,8 +49,8 @@ export default function Home() {
 
           {/* Signature visual: a schematic beam column with diffraction
               spots, previewing the same node motif used in the pipeline. */}
-          <div className="flex justify-center">
-            <svg viewBox="0 0 220 220" className="h-56 w-56">
+          <div className="flex justify-center py-4 lg:py-0">
+            <svg viewBox="0 0 220 220" className="h-44 w-44 sm:h-56 sm:w-56 max-w-full">
               <circle
                 cx="110"
                 cy="110"
@@ -109,14 +109,14 @@ export default function Home() {
 
       {/* Stage overview -- numbered because this really is a strict,
           ordered pipeline: each stage consumes the previous stage's output. */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
         <h2 className="text-xl font-semibold text-ink">The nine stages</h2>
         <p className="mt-2 max-w-2xl text-[15px] text-muted">
           Each stage has its own upload, form, or results table. Run them in
           order from the pipeline page.
         </p>
 
-        <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-8 grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { id: 1, title: "Crystal Structure and Lattice Parameters", summary: "Select the crystal structure and enter the required lattice parameters." },
             { id: 2, title: "Image Upload and Alignment", summary: "Upload TEM micrographs and corresponding diffraction patterns, and set the image\u2013diffraction rotational offset." },
@@ -147,7 +147,7 @@ export default function Home() {
       </section>
 
       {/* Citation & Contact */}
-      <section className="mx-auto max-w-7xl px-6 pb-16">
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 pb-12 sm:pb-16">
         <CitationContactCard />
       </section>
     </>

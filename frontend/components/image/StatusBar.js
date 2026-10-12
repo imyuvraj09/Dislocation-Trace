@@ -22,9 +22,9 @@ export default function StatusBar({ imageId }) {
   const { viewport } = image;
 
   return (
-    <div className="flex items-center justify-between border-t border-line bg-surfaceAlt px-4 py-1.5 text-[11px] text-muted">
-      <span className="truncate font-mono">{image.filename}</span>
-      <div className="flex items-center gap-4 font-mono">
+    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-line bg-surfaceAlt px-3 sm:px-4 py-1.5 text-[11px] text-muted">
+      <span className="truncate font-mono max-w-[160px] sm:max-w-xs">{image.filename}</span>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono">
         <span>
           {image.width || "?"} × {image.height || "?"} px
         </span>

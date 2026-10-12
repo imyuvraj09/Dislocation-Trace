@@ -166,7 +166,7 @@ export default function Stage3LinePairing({ onComplete }) {
         <h3 className="text-sm font-semibold text-ink">
           {editingId ? `Editing pair ${editingId}` : "Create a pair"}
         </h3>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {[1, 2].map((side) => {
             const imageKey = `image${side}`;
             const lineKey = `lineId${side}`;
@@ -181,7 +181,7 @@ export default function Stage3LinePairing({ onComplete }) {
                 <select
                   value={draft[imageKey]}
                   onChange={(e) => setDraft({ ...draft, [imageKey]: e.target.value, [lineKey]: "" })}
-                  className="min-w-0 flex-1 truncate rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none"
+                  className="min-w-0 flex-1 truncate rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none min-h-[40px] sm:min-h-0"
                 >
                   <option value="">Image {side}…</option>
                   {temImages.map((t) => (
@@ -194,7 +194,7 @@ export default function Stage3LinePairing({ onComplete }) {
                   value={draft[lineKey]}
                   onChange={(e) => setDraft({ ...draft, [lineKey]: e.target.value })}
                   disabled={!draft[imageKey]}
-                  className="w-28 shrink-0 rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none disabled:opacity-50"
+                  className="w-24 sm:w-28 shrink-0 rounded-md border border-line bg-surface px-2 py-1.5 text-sm text-ink focus:border-beam-500 focus:outline-none disabled:opacity-50 min-h-[40px] sm:min-h-0"
                 >
                   <option value="">Label…</option>
                   {linesFor(draft[imageKey]).map((l) => (
@@ -207,12 +207,12 @@ export default function Stage3LinePairing({ onComplete }) {
             );
           })}
         </div>
-        <div className="flex items-center gap-2">
-          <Button variant="secondary" onClick={handleAddOrSave} disabled={!draftValid}>
+        <div className="flex flex-wrap items-center gap-2">
+          <Button variant="secondary" onClick={handleAddOrSave} disabled={!draftValid} className="min-h-[40px]">
             {editingId ? "Save pair" : "Add pair"}
           </Button>
           {editingId && (
-            <Button variant="ghost" onClick={resetDraft}>
+            <Button variant="ghost" onClick={resetDraft} className="min-h-[40px]">
               Cancel
             </Button>
           )}
@@ -220,8 +220,8 @@ export default function Stage3LinePairing({ onComplete }) {
       </section>
 
       {data.pairs.length > 0 && (
-        <section className="overflow-hidden rounded-lg border border-line">
-          <table className="w-full border-collapse text-sm">
+        <section className="overflow-x-auto scroll-thin rounded-lg border border-line">
+          <table className="w-full border-collapse text-sm min-w-[320px]">
             <thead>
               <tr className="bg-surfaceAlt text-left text-xs uppercase tracking-wide text-subtle">
                 <th className="px-4 py-2.5 font-medium">Pair</th>

@@ -449,15 +449,16 @@ export default function Stage9BatchOutput({ onComplete }) {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3">
             <Button
               onClick={handleGenerate}
               loading={batchLoading}
               disabled={!allPairsReady || upstreamStaleIds.length > 0}
+              className="min-h-[44px]"
             >
               Generate batch report ({readyCount} of {pairs.length} ready)
             </Button>
-            <Button variant="secondary" onClick={handleExport} disabled={rows.length === 0}>
+            <Button variant="secondary" onClick={handleExport} disabled={rows.length === 0} className="min-h-[44px]">
               Download CSV
             </Button>
           </div>

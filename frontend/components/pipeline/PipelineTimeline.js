@@ -51,14 +51,14 @@ export default function PipelineTimeline({ excludeStage1 = false }) {
   return (
     <div>
       {/* Progress summary */}
-      <div className="mb-8 flex items-center justify-between rounded-xl border border-line bg-surface px-5 py-4 shadow-panel">
+      <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-line bg-surface px-4 sm:px-5 py-4 shadow-panel">
         <div>
           <p className="text-sm font-medium text-ink">Pipeline progress</p>
           <p className="text-xs text-subtle">
             {completedCount} of {totalStages} stages complete
           </p>
         </div>
-        <div className="h-2 w-40 overflow-hidden rounded-full bg-surfaceAlt">
+        <div className="h-2 w-full sm:w-40 overflow-hidden rounded-full bg-surfaceAlt">
           <div
             className="h-full rounded-full bg-beam-gradient transition-all"
             style={{ width: `${(completedCount / totalStages) * 100}%` }}
@@ -71,16 +71,16 @@ export default function PipelineTimeline({ excludeStage1 = false }) {
             electron beam column the whole analysis is built around. */}
         <div className="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-beam-500 via-beam-300 to-line" />
 
-        <ol className="space-y-5">
+        <ol className="space-y-4 sm:space-y-5">
           {displayedStages.map((stage) => {
             const StageComponent = STAGE_COMPONENTS[stage.id];
             const expanded = isExpanded(stage.id);
             return (
-              <li key={stage.id} className="relative flex gap-4">
-                <div className="relative z-10">
+              <li key={stage.id} className="relative flex gap-3 sm:gap-4">
+                <div className="relative z-10 shrink-0">
                   <StageNode status={statusOf(stage.id)} active={expanded} />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <StagePanel
                     stage={stage}
                     status={statusOf(stage.id)}

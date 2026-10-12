@@ -235,6 +235,7 @@ function LinesSvg({
           <g
             key={line.id}
             onMouseDown={onAnnotationMouseDown ? (e) => { e.stopPropagation(); onAnnotationMouseDown(e, line.id); } : undefined}
+            onPointerDown={onAnnotationMouseDown ? (e) => { e.stopPropagation(); onAnnotationMouseDown(e, line.id); } : undefined}
             onClick={onAnnotationClick ? (e) => { e.stopPropagation(); onAnnotationClick(line.id); } : undefined}
             style={{ cursor: onAnnotationMouseDown ? "move" : onAnnotationClick ? "pointer" : "default" }}
           >
@@ -281,6 +282,10 @@ function LinesSvg({
                     e.stopPropagation();
                     onEndpointMouseDown?.(e, line.id, 1);
                   }}
+                  onPointerDown={(e) => {
+                    e.stopPropagation();
+                    onEndpointMouseDown?.(e, line.id, 1);
+                  }}
                 />
                 <circle
                   cx={line.x2}
@@ -291,6 +296,10 @@ function LinesSvg({
                   strokeWidth={handleStrokeW}
                   className="cursor-move pointer-events-auto"
                   onMouseDown={(e) => {
+                    e.stopPropagation();
+                    onEndpointMouseDown?.(e, line.id, 2);
+                  }}
+                  onPointerDown={(e) => {
                     e.stopPropagation();
                     onEndpointMouseDown?.(e, line.id, 2);
                   }}
@@ -344,6 +353,7 @@ function GVectorsSvg({
           <g
             key={g.id}
             onMouseDown={onAnnotationMouseDown ? (e) => { e.stopPropagation(); onAnnotationMouseDown(e, g.id); } : undefined}
+            onPointerDown={onAnnotationMouseDown ? (e) => { e.stopPropagation(); onAnnotationMouseDown(e, g.id); } : undefined}
             onClick={onAnnotationClick ? (e) => { e.stopPropagation(); onAnnotationClick(g.id); } : undefined}
             style={{ cursor: onAnnotationMouseDown ? "move" : onAnnotationClick ? "pointer" : "default" }}
           >
@@ -391,6 +401,10 @@ function GVectorsSvg({
                     e.stopPropagation();
                     onEndpointMouseDown?.(e, g.id, 1);
                   }}
+                  onPointerDown={(e) => {
+                    e.stopPropagation();
+                    onEndpointMouseDown?.(e, g.id, 1);
+                  }}
                 />
                 <circle
                   cx={g.tx}
@@ -401,6 +415,10 @@ function GVectorsSvg({
                   strokeWidth={handleStrokeW}
                   className="cursor-move pointer-events-auto"
                   onMouseDown={(e) => {
+                    e.stopPropagation();
+                    onEndpointMouseDown?.(e, g.id, 2);
+                  }}
+                  onPointerDown={(e) => {
                     e.stopPropagation();
                     onEndpointMouseDown?.(e, g.id, 2);
                   }}

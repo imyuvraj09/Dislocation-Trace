@@ -15,7 +15,7 @@ export default function Button({
 }) {
   return (
     <button
-      className={`inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed ${VARIANTS[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed min-h-[40px] ${VARIANTS[variant]} ${className}`}
       disabled={loading || props.disabled}
       {...props}
     >

@@ -10,14 +10,14 @@ export default function StagePanel({ stage, status, expanded, onToggle, children
       <button
         onClick={onToggle}
         aria-expanded={expanded}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
+        className="flex w-full items-center justify-between gap-2 sm:gap-4 px-3.5 sm:px-5 py-3.5 sm:py-4 text-left min-h-[44px]"
       >
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-xs text-subtle">
+        <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+          <span className="font-mono text-xs text-subtle shrink-0">
             {String(stage.id).padStart(2, "0")}
           </span>
-          <div>
-            <h3 className="text-[15px] font-semibold text-ink">{stage.title}</h3>
+          <div className="min-w-0">
+            <h3 className="text-sm sm:text-[15px] font-semibold text-ink truncate sm:whitespace-normal">{stage.title}</h3>
             <p className="mt-0.5 hidden max-w-xl text-sm text-muted sm:block whitespace-pre-line">
               {typeof stage.summary === "string" && stage.summary.includes("uₚ") ? (
                 <>
@@ -32,7 +32,7 @@ export default function StagePanel({ stage, status, expanded, onToggle, children
           </div>
         </div>
 
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <Badge status={status} />
           <svg
             viewBox="0 0 20 20"
@@ -53,7 +53,7 @@ export default function StagePanel({ stage, status, expanded, onToggle, children
       </button>
 
       {expanded && (
-        <div className="border-t border-line px-5 py-6">{children}</div>
+        <div className="border-t border-line px-3.5 sm:px-5 py-4 sm:py-6 overflow-x-hidden min-w-0">{children}</div>
       )}
     </div>
   );

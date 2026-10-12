@@ -336,9 +336,9 @@ export default function Stage4AngleComputation({ onComplete }) {
         const isUsingCommon = useCommonGVectors && !isOverridden;
 
         return (
-          <section key={p.pairId} className="space-y-3 rounded-lg border border-line p-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
+          <section key={p.pairId} className="space-y-3 rounded-lg border border-line p-3 sm:p-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <h3 className="text-sm font-semibold text-ink">Pair {p.pairId}</h3>
                 {useCommonGVectors && (
                   isOverridden ? (
@@ -355,11 +355,11 @@ export default function Stage4AngleComputation({ onComplete }) {
 
               {useCommonGVectors && (
                 isOverridden ? (
-                  <Button variant="ghost" size="sm" onClick={() => handleUseCommonForPair(p.pairId)}>
+                  <Button variant="ghost" size="sm" onClick={() => handleUseCommonForPair(p.pairId)} className="min-h-[36px]">
                     Use common selection
                   </Button>
                 ) : (
-                  <Button variant="ghost" size="sm" onClick={() => handleOverridePair(p.pairId)}>
+                  <Button variant="ghost" size="sm" onClick={() => handleOverridePair(p.pairId)} className="min-h-[36px]">
                     Override for this pair
                   </Button>
                 )

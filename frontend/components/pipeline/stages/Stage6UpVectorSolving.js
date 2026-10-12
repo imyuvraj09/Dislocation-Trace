@@ -106,8 +106,8 @@ export default function Stage6UpVectorSolving({ onComplete }) {
       <Alert variant="error" message={error} onRetry={handleSolveAll} />
 
       {Object.keys(data.resultsByPairImage).length > 0 && (
-        <div className="overflow-hidden rounded-lg border border-line">
-          <table className="w-full border-collapse text-sm">
+        <div className="overflow-x-auto scroll-thin rounded-lg border border-line">
+          <table className="w-full border-collapse text-sm min-w-[340px]">
             <thead>
               <tr className="bg-surfaceAlt text-left text-xs uppercase tracking-wide text-subtle">
                 <th className="px-4 py-2.5 font-medium">Pair / image</th>

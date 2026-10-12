@@ -31,9 +31,9 @@ export default function CitationContactCard() {
   };
 
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
+    <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
       {/* ── Left: Cite this tool ── */}
-      <div className="rounded-lg border border-line bg-surface p-5 transition-colors hover:border-beam-300">
+      <div className="rounded-lg border border-line bg-surface p-4 sm:p-5 transition-colors hover:border-beam-300 min-w-0">
         <span className="font-mono text-xs text-beam-600">CITE</span>
         <h3 className="mt-1 text-[15px] font-semibold text-ink">
           Cite this tool
@@ -43,13 +43,13 @@ export default function CitationContactCard() {
         </p>
 
         {/* Citation box */}
-        <pre className="mt-4 overflow-x-auto whitespace-pre-wrap break-words rounded-md border border-line bg-surfaceAlt p-3 font-mono text-xs leading-relaxed text-ink">
+        <pre className="mt-4 overflow-x-auto whitespace-pre-wrap break-words rounded-md border border-line bg-surfaceAlt p-3 font-mono text-xs leading-relaxed text-ink max-w-full">
           DislocationTrace: A User-Guided Framework for Dislocation Burgers Vector Identification and Trace Analysis. Mohan Kumar M, Yuvraj Singh, Kakarla Harshavardhan, Ankur Chauhan (2026). EEMG Lab, Indian Institute of Science (IISc).{" "}
           <a
             href="https://github.com/imyuvraj09/IISc-Research-Internshipp"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-beam-600 underline hover:text-beam-700 cursor-pointer"
+            className="text-beam-600 underline hover:text-beam-700 cursor-pointer break-all"
           >
             https://github.com/imyuvraj09/IISc-Research-Internshipp
           </a>
@@ -57,7 +57,7 @@ export default function CitationContactCard() {
 
         <button
           onClick={handleCopy}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-beam-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-beam-600"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-md bg-beam-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-beam-600 min-h-[44px]"
         >
           {copied ? (
             <>

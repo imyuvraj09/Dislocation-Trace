@@ -115,7 +115,7 @@ function ImageDropzone({ label, files, onAddFiles, onRemoveFile }) {
         onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
         onDragLeave={() => setDragOver(false)}
         onDrop={handleDrop}
-        className={`rounded-lg border-2 border-dashed px-6 py-8 text-center transition-colors ${
+        className={`rounded-lg border-2 border-dashed px-4 py-6 sm:px-6 sm:py-8 text-center transition-colors ${
           dragOver
             ? "border-beam-500 bg-beam-50"
             : "border-line bg-surfaceAlt hover:border-lineStrong"
@@ -126,7 +126,7 @@ function ImageDropzone({ label, files, onAddFiles, onRemoveFile }) {
         </svg>
         <p className="mt-2 text-sm text-muted">
           Drag &amp; drop, or{" "}
-          <label className="cursor-pointer text-beam-600 underline">
+          <label className="cursor-pointer text-beam-600 underline min-h-[44px] inline-flex items-center">
             Browse Files
             <input
               type="file"
@@ -140,13 +140,13 @@ function ImageDropzone({ label, files, onAddFiles, onRemoveFile }) {
             />
           </label>
         </p>
-        <p className="mt-1 text-xs text-subtle">
+        <p className="mt-1 text-xs text-subtle break-words">
           Supported: {ACCEPT_FORMATS.split(",").join(", ")}
         </p>
       </div>
 
       {files.length > 0 && (
-        <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4 lg:grid-cols-5">
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-3">
           {files.map((file, index) => (
             <ImageThumbnail
               key={`${file.name}-${file.size}-${index}`}
@@ -243,14 +243,14 @@ export default function NewWorkflow() {
       )}
 
       {/* ── Step indicators ── */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-2 sm:gap-6">
         <StepIndicator number={1} title="Upload images" status={step1Status} />
         <div className="h-px flex-1 bg-line" />
         <StepIndicator number={2} title="Image Workshop" status={step2Status} />
       </div>
 
       {/* ── Step 1: Upload images ── */}
-      <section className="rounded-xl border border-line bg-surface px-6 py-6 shadow-panel">
+      <section className="rounded-xl border border-line bg-surface px-4 sm:px-6 py-5 sm:py-6 shadow-panel">
         <h2 className="text-lg font-semibold text-ink">Step 1 — Upload images</h2>
         <div className="mt-2 space-y-2 text-sm text-muted">
           <p>
@@ -265,7 +265,7 @@ export default function NewWorkflow() {
           </p>
         </div>
 
-        <div className="mt-6 grid gap-6 lg:grid-cols-2">
+        <div className="mt-6 grid gap-6 grid-cols-1 lg:grid-cols-2">
           <ImageDropzone
             label="TEM images (bright-field / dark-field)"
             files={temFiles}
@@ -283,7 +283,7 @@ export default function NewWorkflow() {
 
       {/* ── Step 2: Go to Image Workshop ── */}
       {hasFiles && (
-        <section className="rounded-xl border border-line bg-surface px-6 py-6 shadow-panel">
+        <section className="rounded-xl border border-line bg-surface px-4 sm:px-6 py-5 sm:py-6 shadow-panel">
           <h2 className="text-lg font-semibold text-ink">Step 2 — Image Workshop</h2>
           <p className="mt-1 text-sm text-muted">
             Open the Image Workshop to inspect your images and perform manual
@@ -291,7 +291,7 @@ export default function NewWorkflow() {
           </p>
 
           <div className="mt-5">
-            <Button onClick={handleGoToWorkshop}>
+            <Button onClick={handleGoToWorkshop} className="w-full sm:w-auto min-h-[44px]">
               Go to Image Workshop
             </Button>
           </div>

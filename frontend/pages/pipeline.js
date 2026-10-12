@@ -12,12 +12,12 @@ export default function PipelinePage() {
         <title>Pipeline — DislocationTrace</title>
       </Head>
 
-      <div className="mx-auto max-w-4xl px-6 py-12">
-        <header className="mb-10">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
+        <header className="mb-8 sm:mb-10">
           <p className="text-xs font-medium uppercase tracking-wide text-beam-600">
             Image analysis workflow
           </p>
-          <h1 className="mt-2 text-3xl font-semibold text-ink">
+          <h1 className="mt-2 text-2xl sm:text-3xl font-semibold text-ink">
             Dislocation trace analysis
           </h1>
           <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">
@@ -32,7 +32,7 @@ export default function PipelinePage() {
         {/* ── g·b Explorer — Optional Burgers-vector identification ── */}
         <section
           id="gb-explorer-section"
-          className="mb-10 scroll-mt-6 rounded-xl border border-beam-200 bg-surface px-5 py-5 shadow-panel"
+          className="mb-8 sm:mb-10 scroll-mt-6 rounded-xl border border-beam-200 bg-surface px-4 sm:px-5 py-4 sm:py-5 shadow-panel"
         >
           <div className="mb-4">
             <div className="flex items-center gap-2">

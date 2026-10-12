@@ -10,14 +10,14 @@ export default function WorkspacePage() {
         <title>Image Workspace — Dislocation Trace</title>
       </Head>
 
-      <div className="mx-auto max-w-7xl px-6 py-12">
-        <header className="mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-6 sm:py-12">
+        <header className="mb-6 sm:mb-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
             <p className="text-xs font-medium uppercase tracking-wide text-beam-600">
               Reusable image infrastructure
             </p>
-            <h1 className="mt-2 text-3xl font-semibold text-ink">Image Workspace</h1>
-            <ol className="mt-3 max-w-2xl space-y-2 text-[15px] leading-relaxed text-muted">
+            <h1 className="mt-2 text-2xl sm:text-3xl font-semibold text-ink">Image Workspace</h1>
+            <ol className="mt-3 max-w-2xl space-y-2 text-sm sm:text-[15px] leading-relaxed text-muted">
               <li>
                 1. Select the first TEM image and use Draw Line to precisely mark the projected traces of the dislocation segments you wish to analyse.
               </li>
@@ -35,9 +35,9 @@ export default function WorkspacePage() {
               </li>
             </ol>
           </div>
-          <div className="shrink-0 pt-2">
-            <Link href="/pipeline">
-              <Button variant="primary" className="shadow-sm">
+          <div className="shrink-0 pt-1 sm:pt-2">
+            <Link href="/pipeline" className="block w-full sm:w-auto">
+              <Button variant="primary" className="shadow-sm w-full sm:w-auto min-h-[44px]">
                 Continue to Pipeline &rarr;
               </Button>
             </Link>

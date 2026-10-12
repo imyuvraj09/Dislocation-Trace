@@ -248,12 +248,16 @@ export default function ImageViewport({ imageId, selectedLineId, onSelectLine, h
   return (
     <div
       ref={viewportRef}
-      className={`h-full w-full select-none ${cursorClass}`}
+      className={`h-full w-full select-none touch-none ${cursorClass}`}
       onWheel={handleWheel}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={stopDragging}
       onMouseLeave={stopDragging}
+      onPointerDown={handleMouseDown}
+      onPointerMove={handleMouseMove}
+      onPointerUp={stopDragging}
+      onPointerCancel={stopDragging}
       onClick={handleClick}
     >
       <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#0B1220]">
