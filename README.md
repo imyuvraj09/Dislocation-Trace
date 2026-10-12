@@ -475,7 +475,7 @@ The following credits and links are recorded in the application's About page. Ro
 | **Dr. Ankur Chauhan** | Indian Institute of Science, Bengaluru | Academic supervision and expertise in electron microscopy and crystallography | [LinkedIn](https://www.linkedin.com/in/ankur-chauhan-012b13257/) · [Email](mailto:ankurchauhan@iisc.ac.in) |
 | **Mohan Kumar M** | Indian Institute of Science, Bengaluru | Project mentorship and methodological guidance | [LinkedIn](https://www.linkedin.com/in/mohankumarmurugan/) · [Email](mailto:mohan@iisc.ac.in) |
 | **Harshavardhan Kakarla** | National Institute of Technology Patna | TEM trace-analysis automation combining Python/OpenCV and crystallographic geometry | [LinkedIn](https://www.linkedin.com/in/harsha1906) · [Email](mailto:kakarlaharshavardhan@gmail.com) |
-| **Yuvraj Singh** | MCKV Institute of Engineering, West Bengal | TEM trace-analysis automation combining Python/OpenCV and crystallographic geometry | [GitHub](https://github.com/imyuvraj09) · [LinkedIn](https://www.linkedin.com/in/imyuvraj-singh/) · [Email](mailto:yuvraj@mckvie.edu.in) |
+| **Yuvraj Singh** | MCKV Institute of Engineering, West Bengal | TEM trace-analysis automation combining Python/OpenCV and crystallographic geometry | [GitHub](https://github.com/imyuvraj09) · [LinkedIn](https://www.linkedin.com/in/imyuvraj-singh/) · [Email](mailto:yuvrajsinghias09122004@gmail.com) |
 
 See [GitHub's contributor history](https://github.com/imyuvraj09/Dislocation-Trace/graphs/contributors) for recorded code contributions. Update this section as further contributors are credited.
 
