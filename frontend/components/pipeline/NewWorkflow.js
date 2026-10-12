@@ -307,7 +307,7 @@ export default function NewWorkflow() {
             Downstream analysis
           </p>
           <p className="mt-1.5 text-sm text-muted">
-            Proceed with Zone axes and diffraction indexing, Dislocation-segment pairing, Angle Computation, Up-vector Solving, True Dislocation Line, and Batch Output.
+            Proceed with Zone axes and diffraction indexing, Dislocation-segment pairing, G-vector selection and trace-angle calculation, Up-vector Solving, True Dislocation Line, and Batch Output.
           </p>
         </div>
         <PipelineTimeline excludeStage1 />

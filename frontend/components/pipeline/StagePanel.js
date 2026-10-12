@@ -18,7 +18,7 @@ export default function StagePanel({ stage, status, expanded, onToggle, children
           </span>
           <div>
             <h3 className="text-[15px] font-semibold text-ink">{stage.title}</h3>
-            <p className="mt-0.5 hidden max-w-xl text-sm text-muted sm:block">
+            <p className="mt-0.5 hidden max-w-xl text-sm text-muted sm:block whitespace-pre-line">
               {stage.summary}
             </p>
           </div>

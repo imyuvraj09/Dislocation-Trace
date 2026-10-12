@@ -41,10 +41,10 @@ export const STAGES = [
   {
     id: 4,
     slug: "g-vector-assignment-and-angles",
-    title: "G-vector Assignment & Angle Computation",
+    title: "G-vector selection and trace-angle calculation",
     kind: "form",
     summary:
-      "For each manually created line pair, choose exactly 3 g-vectors (from Stage 2's indexed list) per line, then compute trace angles.",
+      "For each paired segment, select any three indexed g-vectors from each corresponding diffraction pattern.\n\nEnable Use common g-vectors for all pairs to apply the same three-vector selection within each diffraction pattern to all paired segments. Leave it unchecked to select vectors separately for each pair.",
   },
   {
     id: 5,
