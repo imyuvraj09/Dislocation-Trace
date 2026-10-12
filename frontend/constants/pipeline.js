@@ -25,10 +25,10 @@ export const STAGES = [
   {
     id: 2,
     slug: "zone-axis-and-miller-index",
-    title: "Zone Axis & Miller Indexing",
+    title: "Step 2 — Zone axes and diffraction indexing",
     kind: "form",
     summary:
-      "Enter the zone axis for each TEM image and manually assign Miller indices to every detected diffraction spot. No indices are inferred.",
+      "Enter the zone axes and Miller indices determined from your diffraction patterns.",
   },
   {
     id: 3,
