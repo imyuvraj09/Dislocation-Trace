@@ -201,10 +201,9 @@ export default function Stage2MillerIndex({ onComplete }) {
       )}
       <section className="space-y-4">
         <div>
-          <h3 className="text-sm font-semibold text-ink">Zone axis per TEM image</h3>
+          <h3 className="text-sm font-semibold text-ink">TEM–diffraction image pairing</h3>
           <p className="text-xs text-subtle">
-            Enter the zone axis you determined for each TEM image, and select which uploaded
-            diffraction pattern it corresponds to. Neither is inferred from upload order.
+            Match each TEM image to its corresponding diffraction pattern and enter the zone axis
           </p>
         </div>
         <div className="space-y-3">
