@@ -139,9 +139,7 @@ export default function Stage3LinePairing({ onComplete }) {
       <StaleResultsNotice isStale={isStale} upstreamStaleIds={upstreamStaleIds} />
       <section className="space-y-2">
         <p className="text-xs text-subtle">
-          Detected line labels, drawn on their own image (identifiers only -- not implied
-          correspondence across images). Click a line as a shortcut to fill the pair builder below, or
-          use the dropdowns directly.
+          The labels (e.g., M1, M2) identify the traces marked in each image. Select the same physical dislocation segment in both images by clicking its marked line or choosing its label from the dropdowns below. The label numbers may differ between images.
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           {temImages.map(({ image, lines }) => {
