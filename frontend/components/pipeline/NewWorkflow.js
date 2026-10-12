@@ -244,18 +244,26 @@ export default function NewWorkflow() {
 
       {/* ── Step indicators ── */}
       <div className="flex items-center gap-6">
-        <StepIndicator number={1} title="Input Images" status={step1Status} />
+        <StepIndicator number={1} title="Upload images" status={step1Status} />
         <div className="h-px flex-1 bg-line" />
         <StepIndicator number={2} title="Image Workshop" status={step2Status} />
       </div>
 
-      {/* ── Step 1: Input Images ── */}
+      {/* ── Step 1: Upload images ── */}
       <section className="rounded-xl border border-line bg-surface px-6 py-6 shadow-panel">
-        <h2 className="text-lg font-semibold text-ink">Step 1 — Input Images</h2>
-        <p className="mt-1 text-sm text-muted">
-          Upload your TEM and diffraction images. You can drag &amp; drop, browse,
-          upload single or multiple images, and add more at any time.
-        </p>
+        <h2 className="text-lg font-semibold text-ink">Step 1 — Upload images</h2>
+        <div className="mt-2 space-y-2 text-sm text-muted">
+          <p>
+            Upload TEM images of the same dislocation segments at two different specimen orientations, near two zone axes, using diffraction conditions where the segments are clearly visible.
+          </p>
+          <ul className="space-y-1">
+            <li>• First box — TEM images (BF/DF): Upload the micrographs from both orientations.</li>
+            <li>• Second box — Diffraction patterns (SAED): Upload each micrograph’s corresponding pattern, acquired from the same crystal region without changing the specimen orientation.</li>
+          </ul>
+          <p>
+            Drag and drop or browse files. Use matching filenames to identify each TEM–SAED pair.
+          </p>
+        </div>
 
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           <ImageDropzone
