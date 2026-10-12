@@ -61,7 +61,7 @@ export default function Stage7TrueDislocationLine({ onComplete }) {
         loading={loading}
         disabled={readyPairs.length === 0 || upstreamStaleIds.length > 0}
       >
-        Reconstruct true dislocation lines ({readyPairs.length} ready)
+        Reconstruct true dislocation lines
       </Button>
       <Alert variant="error" message={error} onRetry={handleRun} />
       <DataTable columns={columns} rows={resultRows} />
