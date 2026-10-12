@@ -49,10 +49,10 @@ export const STAGES = [
   {
     id: 5,
     slug: "up-vector-solving",
-    title: "Up-vector Solving",
+    title: "Projected dislocation-line direction",
     kind: "form",
     summary:
-      "Solve the foil-normal (up) vector for every pair, using each image's user-entered zone axis and the g-vectors assigned in Stage 4.",
+      "Calculate the crystallographic direction of each marked projected trace uₚ using the indexed g-vectors, the measured angles between those vectors and the trace, and the corresponding zone axis.",
   },
   {
     id: 6,

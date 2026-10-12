@@ -100,7 +100,7 @@ export default function Stage6UpVectorSolving({ onComplete }) {
           (needsCOverA && (!(Number(cOverA) > 0) || !Number.isFinite(Number(cOverA))))
         }
       >
-        Solve Up-vectors ({readyRows.length} line{readyRows.length === 1 ? "" : "s"} ready)
+        Calculate projected-trace directions
       </Button>
 
       <Alert variant="error" message={error} onRetry={handleSolveAll} />

@@ -19,7 +19,15 @@ export default function StagePanel({ stage, status, expanded, onToggle, children
           <div>
             <h3 className="text-[15px] font-semibold text-ink">{stage.title}</h3>
             <p className="mt-0.5 hidden max-w-xl text-sm text-muted sm:block whitespace-pre-line">
-              {stage.summary}
+              {typeof stage.summary === "string" && stage.summary.includes("uₚ") ? (
+                <>
+                  {stage.summary.split("uₚ")[0]}
+                  u<sub>p</sub>
+                  {stage.summary.split("uₚ")[1]}
+                </>
+              ) : (
+                stage.summary
+              )}
             </p>
           </div>
         </div>
