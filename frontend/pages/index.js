@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import { STAGES } from "@/lib/pipelineConfig";
 import CitationContactCard from "@/components/ui/CitationContactCard";
 
 export default function Home() {
@@ -21,12 +20,13 @@ export default function Home() {
               From raw TEM micrographs to indexed dislocation lines.
             </h1>
             <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-muted">
-              Dislocation Trace automates the manual trace analysis workflow
-              traditionally run by materials scientists, from pairing TEM
-              dislocation images across different diffraction conditions to
-              determining the Burgers vector, identifying the dislocation
-              character and slip plane, and completing automated classification
-              through a nine-stage pipeline.
+              DislocationTrace combines TEM images and indexed diffraction
+              information from two specimen orientations to reconstruct
+              three-dimensional dislocation-line directions. Its guided
+              workflow supports Burgers-vector identification,
+              dislocation-character classification and slip-plane
+              determination, with exportable results for multiple dislocation
+              segments.
             </p>
             <div className="mt-8 flex items-center gap-4">
               <Link
@@ -117,7 +117,17 @@ export default function Home() {
         </p>
 
         <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {STAGES.map((stage) => (
+          {[
+            { id: 1, title: "Crystal Structure and Lattice Parameters", summary: "Select the crystal structure and enter the required lattice parameters." },
+            { id: 2, title: "Image Upload and Alignment", summary: "Upload TEM micrographs and corresponding diffraction patterns, and set the image\u2013diffraction rotational offset." },
+            { id: 3, title: "Zone-axis and Diffraction Indexing", summary: "Enter the zone axes and assign crystallographic indices to selected diffraction vectors." },
+            { id: 4, title: "Dislocation-trace Marking and Pairing", summary: "Mark trace endpoints and pair the same physical segment across the two specimen orientations." },
+            { id: 5, title: "Diffraction-vector Selection and Angle Measurement", summary: "Select three diffraction vectors for each projection and calculate their angles with the projected trace." },
+            { id: 6, title: "Projected-trace Direction Determination", summary: "Determine the projected line directions, u_p,1 and u_p,2, in the crystal coordinate system." },
+            { id: 7, title: "True Line-direction Reconstruction", summary: "Combine the two projections to reconstruct the three-dimensional dislocation-line direction, u_T." },
+            { id: 8, title: "Burgers-vector Assignment", summary: "Enter an independently established Burgers vector or use the optional diffraction-invisibility module to identify candidate directions." },
+            { id: 9, title: "Dislocation Character, Slip Plane and Export", summary: "Calculate dislocation character and compatible slip-plane orientations, review crystallographic indices and angular deviations, and export the results." },
+          ].map((stage) => (
             <li
               key={stage.id}
               className="rounded-lg border border-line bg-surface p-5 transition-colors hover:border-beam-300"
