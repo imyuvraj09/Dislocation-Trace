@@ -253,12 +253,9 @@ export default function Stage2MillerIndex({ onComplete }) {
 
       <section className="space-y-4">
         <div>
-          <h3 className="text-sm font-semibold text-ink">Miller indices for detected g-vectors</h3>
+          <h3 className="text-sm font-semibold text-ink">Miller indices of marked g-vectors</h3>
           <p className="text-xs text-subtle">
-            Every detected spot starts unindexed. Type the ({millerAxes.join(" ")}) you assigned for each one --
-            spots left blank are not submitted. The image below shows exactly which spot each g_id
-            refers to (detected = solid violet, manually marked = dashed blue), and updates live as
-            you type -- the same annotations are editable in the Image Workspace.
+            Enter the Miller indices you determined for each manually marked g-vector. Use the labels in the image below to match each vector to its entry. Index at least three vectors per diffraction pattern. Leave unused entries blank. To adjust the annotations, return to the Image Workspace.
           </p>
         </div>
         {diffImages.map(({ image, gvecs }) => {
